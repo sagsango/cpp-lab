@@ -16,6 +16,8 @@ which includes:
 #include <memory>
 #include <cstring>
 
+using namespace std;
+
 void test_basic_string() {
     std::string str = "Hello World";
     std::cout << "String: " << str << std::endl;
@@ -44,9 +46,45 @@ void test_c_and_cpp_string() {
     printf("New C++ String: %s\n", new_cpp_str.c_str());
 }
 
+/*
+find
+*/
+void test_find() {
+    // Searching
+    string str = "C++ Programming";
+    size_t position = str.find("Programming");
+    if (position != string::npos) {
+        cout << "Found at position " << position << endl;
+    }
+    else {
+        cout << "Not found" << endl;
+    }
+    cout << "value_of(string::npos) = " << string::npos << " or "<< (int)string::npos << endl;
+}
+
+/*
+substr
+    (strat_index, length)
+    (strat_inex)
+*/
+void substr_test() {
+     // Substrings
+     string text = "Hello, World!";
+     cout << text << endl;
+     string sub = text.substr(7, 5);
+     cout << sub << endl;
+     sub = text.substr(7);
+     cout << sub << endl;
+}
+
+
+
 int main() {
     test_basic_string();
     test_c_and_cpp_string();
+
+    substr_test();
+    test_find();
    
     return 0;
 }
