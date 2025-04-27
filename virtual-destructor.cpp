@@ -8,11 +8,15 @@
 
 
 #include <iostream>
+using namespace std;
 namespace bad_use {
     class Base {
     public:
         Base() {
             std::cout << "Base Constructor" << std::endl;
+        }
+        void print() {
+            cout << "hello from base!" << endl;
         }
         ~Base() {
             std::cout << "Base Destructor" << std::endl;
@@ -24,6 +28,9 @@ namespace bad_use {
         Derived() {
             std::cout << "Derived Constructor" << std::endl;
         }
+        void print() {
+            cout << "hello from drived!" << endl;
+        }
         ~Derived() {
             std::cout << "Derived Destructor" << std::endl;
         }
@@ -31,6 +38,7 @@ namespace bad_use {
 
     void test() {
         Base* b = new Derived();
+        b->print();
         delete b;
     }
 }
@@ -40,6 +48,9 @@ namespace correct_use {
     public:
         Base() {
             std::cout << "Base Constructor" << std::endl;
+        }
+        virtual void print() {
+            cout << "hello from base!" << endl;
         }
         virtual ~Base() {
             std::cout << "Base Destructor" << std::endl;
@@ -51,6 +62,9 @@ namespace correct_use {
         Derived() {
             std::cout << "Derived Constructor" << std::endl;
         }
+        void print() {
+            cout << "hello from drived!" << endl;
+        }
         ~Derived() {
             std::cout << "Derived Destructor" << std::endl;
         }
@@ -58,6 +72,7 @@ namespace correct_use {
 
     void test() {
         Base* b = new Derived();
+        b->print();
         delete b;
     }
 }

@@ -22,12 +22,19 @@ namespace default_parameters {
         void print(std::string message = "Hello World") {
             std::cout << message << std::endl;
         }
+        // Member function with a default parameter
+        void print2(std::string message = "Hello World2");
 
         void test() {
             print();               // Uses default parameter
+            print2();
             print("Hello C++");    // Overrides default parameter
         }
     };
+     // Member function with a default parameter
+     void Test::print2(std::string message) {
+        std::cout << message << std::endl;
+    }
 
     // Nonmember function with a default parameter
     void print(std::string message = "Hello World") {
@@ -129,8 +136,13 @@ namespace function_overriding {
 
         b.print();  // Calls Base::print
         d.print();  // Calls Derived::print
+
+        /* Here virtual shines */
+        Base * ptr = new Derived();
+        ptr->print();
     }
 }
+
 namespace lemda_function {
     void test() {
         // Lambda function that takes two integers and returns their sum
@@ -141,7 +153,9 @@ namespace lemda_function {
 
         // sort with lemda compare function
         std::vector<int> v = {3, 1, 4, 1, 5, 9};
-        std::function<int(int, int)> cmp = [](int a, int b) { return a > b; };
+        std::function<int(int, int)> cmp = [&](int a, int b) {
+             return a > b; 
+        };
         std::sort(v.begin(), v.end(), cmp);
         for (int i : v) {
             std::cout << i << " ";
