@@ -1,6 +1,6 @@
 # TODO: Continue from : https://www.tutorialspoint.com/cplusplus/index.htm
 CC=g++
-OBJECTS = virtual-destructor string allocator function file
+OBJECTS = virtual-destructor string allocator function file cast
 
 .phony: all clean
 all: $(OBJECTS)
