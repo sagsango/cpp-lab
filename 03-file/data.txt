@@ -1,0 +1,23 @@
+
+
+
+
+
+
+Sequ:
+Min cost:2341.88 total_compelte_paths:329265/4.79002e+08
+  Time:15.8047
+
+ 
+parallel:
+ Final Min cost: 2341.88 total_complete_paths: 139749/4.79002e+08  Time:5.82181
+Job finished.
+
+parallel-with-global pruning:
+#######Final Min cost:####### 2341.88 total_complete_paths: 0/4.79002e+08 Time:3.05588
+#PID:5 Min cost:2341.88 total_complete_paths:34134/4.79002e+08
+
+
+QE:
+#PID:0 Min cost:495.213 total_compelte_paths:0/3.04888e+29
+#######Final Min cost:####### 478.315 total_complete_paths: 0/3.04888e+29 Time:0.716841
