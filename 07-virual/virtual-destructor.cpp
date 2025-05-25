@@ -1,11 +1,16 @@
-// This file demonstrates the need of virtual destructor in base class
-// when we have a pointer of base class pointing to derived class object
-// and we delete the pointer of base class.
-// If we don't make the destructor of base class virtual, then the destructor
-// of derived class will not be called and it will lead to memory leak.
-// To avoid this, we should make the destructor of base class virtual.
-// This is called as "Virtual Destructor".
+/*
+ This file demonstrates the need of virtual destructor in base class
+ when we have a pointer of base class pointing to derived class object
+ and we delete the pointer of base class.
+ If we don't make the destructor of base class virtual, then the destructor
+ of derived class will not be called and it will lead to memory leak.
+ To avoid this, we should make the destructor of base class virtual.
+ This is called as "Virtual Destructor".
 
+
+ Where there is a virual function; then class have vtable or virtual-table
+ table points to correct function to be called, (in case of override)
+*/
 
 #include <iostream>
 using namespace std;
