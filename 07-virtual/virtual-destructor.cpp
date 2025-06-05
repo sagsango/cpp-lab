@@ -12,6 +12,22 @@
  table points to correct function to be called, (in case of override)
 */
 
+/*
+ * XXX: Concept
+ * Why there cant be virtual constructor:
+1. Virtual Mechanism Requires a Fully Constructed Object
+The virtual table (vtable) mechanism used in C++ requires the object to be fully constructed before dynamic dispatch (virtual function calls) can happen.
+
+During the construction of a base class, the derived part of the object does not yet exist.
+Therefore, calling a virtual function (including a hypothetical virtual constructor) at that point wouldn't know which class to dispatch to — because the derived class's vtable isn't set up yet.
+
+2. Constructor's Purpose vs Virtual Dispatch
+A constructor’s job is to build the object from the ground up — starting from the base class and going toward the most derived class.
+
+Virtual functions are for polymorphism — to allow different behaviors depending on the actual object type.
+But before the constructor completes, C++ doesn’t yet know the final "most derived" type, so virtual dispatch doesn’t work reliably.
+*/
+
 
 /*
 XXX: Output
@@ -29,7 +45,6 @@ hello from drived!
 Derived Destructor
 Base Destructor
 07-virtual ❱❱❱
-
 */
 
 #include <iostream>
