@@ -12,6 +12,26 @@
  table points to correct function to be called, (in case of override)
 */
 
+
+/*
+XXX: Output
+
+07-virtual ❱❱❱ ./virtual-destructor
+Bad Use
+Base Constructor
+Derived Constructor
+hello from base!
+Base Destructor
+Correct Use
+Base Constructor
+Derived Constructor
+hello from drived!
+Derived Destructor
+Base Destructor
+07-virtual ❱❱❱
+
+*/
+
 #include <iostream>
 using namespace std;
 namespace bad_use {
